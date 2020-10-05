@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoInputField from './TodoInputField';
 import TodoList from './TodoList';
+import StatusListSelector from './StatusListSelector';
 
 
 class TodoApp extends React.Component {
@@ -11,6 +12,7 @@ class TodoApp extends React.Component {
             <div>
                 <h1>Todos</h1>
                 <TodoInputField />    
+                <StatusListSelector />
                 <TodoList todos={ todos } />
             </div>
         );
