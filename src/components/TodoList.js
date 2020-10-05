@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskTodo from './TaskTodo';
+import TaskStatus from './TaskStatus';
 
 
 class TodoList extends React.Component {
@@ -7,7 +8,12 @@ class TodoList extends React.Component {
         const todoList = [];
 
         this.props.todos.forEach((todo) => {
-            todoList.push(<TaskTodo todo={ todo } key={ todo} />);
+            todoList.push(
+                <div>
+                    <TaskTodo todo={ todo } key={ todo} />
+                    <TaskStatus />
+                </div>
+            );
         });
 
         return(
