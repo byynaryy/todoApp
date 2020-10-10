@@ -5,15 +5,32 @@ import StatusListSelector from './StatusListSelector';
 
 
 class TodoApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={ todo: '', todos: [] }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(todo) {
+        console.log("todo: "+ todo);
+        this.setState({todo: todo});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+    }
+
     render() {
-        const todos = ["shop", "cook", "eat", "wash"];
+        //const todos = ["shop", "cook", "eat", "wash"];
 
         return(
             <div>
                 <h1>Todos</h1>
-                <TodoInputField />    
+                <TodoInputField todo={ this.state.todo } onHandleChange={ this.handleChange } onHandleSubmit={ this.handleSubmit } />    
                 <StatusListSelector />
-                <TodoList todos={ todos } />
+                <TodoList todos={ this.state.todos } />
             </div>
         );
     }
