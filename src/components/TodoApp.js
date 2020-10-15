@@ -20,6 +20,16 @@ class TodoApp extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
+        const task = {
+            todo: this.state.todo,
+            id: Date.now()
+        }
+
+        this.setState(state => ({
+            todos: state.todos.concat(task),
+            todo: ''
+        }));
     }
 
     render() {

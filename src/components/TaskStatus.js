@@ -6,11 +6,11 @@ class TaskStatus extends React.Component {
         return(
             <form>
                 <input type="radio"  name="status" value="todo" />
-                <label for="todo">todo</label>
+                <label htmlFor="todo">todo</label>
                 <input type="radio" name="status" value="doing" />
-                <label for="doing">doing</label>
+                <label htmlFor="doing">doing</label>
                 <input type="radio" name="status" value="done" />
-                <label for="done">done</label>
+                <label htmlFor="done">done</label>
             </form>
         );
     }

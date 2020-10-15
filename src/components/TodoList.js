@@ -8,16 +8,11 @@ class TodoList extends React.Component {
         const todoList = [];
 
         this.props.todos.forEach((todo) => {
-            todoList.push(
-                <div>
-                    <TaskTodo todo={ todo } key={ todo} />
-                    <TaskStatus />
-                </div>
-            );
+            todoList.push(<TaskTodo todo={ todo } key={ todo.id } />);
         });
 
         return(
-            <div>{ todoList }</div>
+            <ul>{ todoList }</ul>
         );
     }
 }
