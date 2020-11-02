@@ -2,15 +2,31 @@ import React from 'react';
 
 
 class TaskStatus extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleChangeStatus = this.handleChangeStatus.bind(this);
+        this.handleSubmitStatus = this.handleSubmitStatus.bind(this);
+    }
+
+    handleChangeStatus(event) {
+        this.props.onHandleChangeStatus(event.target.value);
+    }
+    
+    handleSubmitStatus(event) {
+        this.props.onHandleSubmitStatus(event);
+    }
+
     render() {
         return(
-            <form>
-                <input type="radio"  name="status" value="todo" />
-                <label htmlFor="todo">todo</label>
-                <input type="radio" name="status" value="doing" />
-                <label htmlFor="doing">doing</label>
-                <input type="radio" name="status" value="done" />
-                <label htmlFor="done">done</label>
+            <form onSubmit={ this.handleSubmitStatus }>
+                <input type="radio"  value="todo" checked={ this.props.statusValue === "todo" } onChange={ this.handleChangeStatus } />
+                <label htmlFor="todo">Todo</label>
+                <input type="radio" value="doing" checked={ this.props.statusValue === "doing" } onChange={ this.handleChangeStatus } />
+                <label htmlFor="doing">Doing</label>
+                <input type="radio" value="done" checked={ this.props.statusValue === "done" } onChange={ this.handleChangeStatus } />
+                <label htmlFor="done">Done</label>
+                <input type="submit" value="Status" />
             </form>
         );
     }
