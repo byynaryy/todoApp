@@ -20,11 +20,11 @@ class TaskStatus extends React.Component {
     render() {
         return(
             <form onSubmit={ this.handleSubmitStatus }>
-                <input type="radio"  value="todo" checked={ this.props.statusValue === "todo" } onChange={ this.handleChangeStatus } />
+                <input type="radio"  name={ this.props.name } value="todo" checked={ this.props.statusValue === "todo" } onChange={ this.handleChangeStatus } />
                 <label htmlFor="todo">Todo</label>
-                <input type="radio" value="doing" checked={ this.props.statusValue === "doing" } onChange={ this.handleChangeStatus } />
+                <input type="radio" name={ this.props.name } value="doing" checked={ this.props.statusValue === "doing" } onChange={ this.handleChangeStatus } />
                 <label htmlFor="doing">Doing</label>
-                <input type="radio" value="done" checked={ this.props.statusValue === "done" } onChange={ this.handleChangeStatus } />
+                <input type="radio" name={ this.props.name } value="done" checked={ this.props.statusValue === "done" } onChange={ this.handleChangeStatus } />
                 <label htmlFor="done">Done</label>
                 <input type="submit" value="Status" />
             </form>

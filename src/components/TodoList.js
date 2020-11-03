@@ -23,7 +23,7 @@ class TodoList extends React.Component {
 
         this.props.todos.forEach((todo) => {
             todoList.push(
-                <TaskTodo todoo={ todo } key={ todo.id }  onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue } onHandleSubmitStatus={ this.handleSubmitStatus } />
+                <TaskTodo todoo={ todo.todo } key={ todo.id }  onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue } onHandleSubmitStatus={ this.handleSubmitStatus } />
             );
         });
 

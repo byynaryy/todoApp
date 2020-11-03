@@ -23,8 +23,8 @@ class TaskTodo extends React.Component {
 
         return(
             <li>
-                { todo.todo }
-                <TaskStatus onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
+                { todo }
+                <TaskStatus name = { todo } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
             </li>
         );
     }
