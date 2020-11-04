@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskTodo from './TaskTodo';
-
+import TaskStatus from './TaskStatus';
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -23,11 +23,12 @@ class TodoList extends React.Component {
 
         this.props.todos.forEach((todo) => {
             todoList.push(
-                <TaskTodo todoo={ todo.todo } key={ todo.id }  onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue } onHandleSubmitStatus={ this.handleSubmitStatus } />
+                <li key={ todo.id }>
+                    <TaskTodo todoo={ todo.todo } onHandleChangeStatus={ this.handleChangeStatus } onHandleSubmitStatus={ this.handleSubmitStatus } />
+                    <TaskStatus name = { todo.todo } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
+                </li>
             );
         });
-
-        
 
         return(
             <ul>{ todoList }</ul>

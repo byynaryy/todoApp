@@ -1,5 +1,4 @@
 import React from 'react';
-import TaskStatus from './TaskStatus';
 
 
 class TaskTodo extends React.Component {
@@ -22,10 +21,9 @@ class TaskTodo extends React.Component {
         const todo = this.props.todoo;
 
         return(
-            <li>
+            <div>
                 { todo }
-                <TaskStatus name = { todo } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
-            </li>
+            </div>
         );
     }
 }
