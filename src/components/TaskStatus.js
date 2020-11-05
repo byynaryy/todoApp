@@ -9,8 +9,8 @@ class TaskStatus extends React.Component {
         this.handleSubmitStatus = this.handleSubmitStatus.bind(this);
     }
 
-    handleChangeStatus(event) {
-        this.props.onHandleChangeStatus(event.target.value);
+    handleChangeStatus(event, index) {
+        this.props.onHandleChangeStatus(event.target.value, this.props.index);
     }
     
     handleSubmitStatus(event) {

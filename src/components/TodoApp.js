@@ -34,8 +34,10 @@ class TodoApp extends React.Component {
         }));
     }
 
-    handleChangeStatus(statusValue) {
+    handleChangeStatus(statusValue, index) {
         console.log("statusValue: "+ statusValue);
+        console.log("statusValue: "+ index);
+    
         this.setState({statusValue: statusValue});
     }
 

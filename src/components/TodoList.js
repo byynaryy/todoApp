@@ -10,8 +10,8 @@ class TodoList extends React.Component {
         this.handleSubmitStatus = this.handleSubmitStatus.bind(this);
     }
 
-    handleChangeStatus(event) {
-        this.props.onHandleChangeStatus(event);
+    handleChangeStatus(event, index) {
+        this.props.onHandleChangeStatus(event, index);
     }
 
     handleSubmitStatus(event) {
@@ -21,11 +21,11 @@ class TodoList extends React.Component {
     render() {
         const todoList = [];
 
-        this.props.todos.forEach((todo) => {
+        this.props.todos.forEach((todo, index) => {
             todoList.push(
                 <li key={ todo.id }>
                     <TaskTodo todoo={ todo.todo } onHandleChangeStatus={ this.handleChangeStatus } onHandleSubmitStatus={ this.handleSubmitStatus } />
-                    <TaskStatus name = { todo.todo } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
+                    <TaskStatus name = { todo.todo } index={ this.props.index } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
                 </li>
             );
         });
