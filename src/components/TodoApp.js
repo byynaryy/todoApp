@@ -30,7 +30,7 @@ class TodoApp extends React.Component {
 
         this.setState(state => ({
             todos: state.todos.concat(task),
-            todo: ''
+            todo: '',
         }));
     }
 

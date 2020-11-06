@@ -25,7 +25,6 @@ class TodoList extends React.Component {
             todoList.push(
                 <li key={ todo.id }>
                     <TaskTodo todoo={ todo.todo } onHandleChangeStatus={ this.handleChangeStatus } onHandleSubmitStatus={ this.handleSubmitStatus } />
-                    <TaskStatus name = { todo.todo } index={ this.props.index } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.props.statusValue} onHandleSubmitStatus={ this.handleSubmitStatus } />
                 </li>
             );
         });
