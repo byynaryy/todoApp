@@ -51,7 +51,7 @@ class TodoApp extends React.Component {
 
         return(
             <div>
-                <h1>Todos App</h1>
+                <h1>Todos</h1>
                 <TodoInputField todo={ this.state.todo } onHandleChange={ this.handleChange } onHandleSubmit={ this.handleSubmit } />    
                 <StatusListSelector />
                 <TodoList todos={ this.state.todos } onHandleChangeStatus={ this.handleChangeStatus } statusValue={ this.state.statusValue } onHandleSubmitStatus={ this.handleSubmitStatus } />
